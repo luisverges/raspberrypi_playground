@@ -5,7 +5,7 @@ modprobe i2c-dev
 
 # Start app
 #python3 test.py
-python3 main.py
+python3 src/main.py
 
 
 #echo new cron into cron file

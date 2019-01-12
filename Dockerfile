@@ -17,7 +17,7 @@ RUN apt-get update && \
 
 ENV INITSYSTEM on
 
-COPY . .
+
 COPY src/* ./
 COPY start.sh ./
 
