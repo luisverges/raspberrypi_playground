@@ -10,7 +10,7 @@ def getcredentials(file):
         password=file.readline()
     return [username, password]
 
-os.chdir(os.path.join(os.getcwd(),src))
+os.chdir(os.path.join(os.getcwd(),'src'))
 
 to_list=['luisverges@gmail.com','perseofliesagain@gmail.com'] ######LIST
 output_file=os.path.join('output','mail_status.txt')
