@@ -1,0 +1,1 @@
+ffmpeg -r 7 -i img%04d.png -i "Brian Eno The Big Ship.mp3" -acodec copy -vcodec mpeg4 OUTPUT.avi

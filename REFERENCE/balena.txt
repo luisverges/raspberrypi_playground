@@ -1,0 +1,1 @@
+git remote add balena g_luis_vr@git.balena-cloud.com:g_luis_vr/diana.git
