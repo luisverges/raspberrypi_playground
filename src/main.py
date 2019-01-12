@@ -9,7 +9,7 @@ def getcredentials(file):
         username = file.readline()[:-1]
         password=file.readline()
     return [username, password]
-
+print(os.getcwd())
 to_list=['luisverges@gmail.com','perseofliesagain@gmail.com'] ######LIST
 output_file=os.path.join('output','mail_status.txt')
 
