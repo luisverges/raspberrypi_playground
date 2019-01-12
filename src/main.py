@@ -18,7 +18,7 @@ with open('day.txt', 'r') as file:
     lines = file.readlines()
     day = lines[0][:-1]
 
-html_file=open(os.path.join('mails',day+'.html', 'r', encoding='utf-8'))
+html_file=open(os.path.join('mails',day+'.html'), 'r', encoding='utf-8'))
 html=html_file.read()
 html_file.close()
 
