@@ -1,5 +1,5 @@
 from PIL import Image, ImageDraw
-#from sense_hat import SenseHat
+from sense_hat import SenseHat
 import random
 import os
 import time
@@ -74,7 +74,7 @@ def showimage(path): #Showing an image on the sensehat
     image = ingestimage(path)
     sense = SenseHat()
     sense.set_pixels(image) 
-    time.sleep(120)
+    time.sleep(240)
     sense.clear() 
 
 def ingestvideo(folder):#'animation\\Frames'
