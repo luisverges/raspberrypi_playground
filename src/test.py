@@ -26,5 +26,5 @@ def raspi_logo():
     return logo
 
 s.set_pixels(raspi_logo())
-time.sleep(15)
+time.sleep(30)
 s.clear()

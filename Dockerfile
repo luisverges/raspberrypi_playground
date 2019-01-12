@@ -22,6 +22,3 @@ COPY src/* ./
 COPY start.sh ./
 
 CMD ["bash", "start.sh"]
-
-
-CMD modprobe i2c-dev && python src/main.py
