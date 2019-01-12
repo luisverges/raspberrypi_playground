@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -yq \
 
 WORKDIR /usr/src/app
 
-COPY requirements.txt ./
+COPY * ./
 RUN apt-get update && \
     apt-get install -yq --no-install-recommends \
       build-essential libssl-dev libffi-dev libyaml-dev python3-dev python3-pip && \
@@ -16,9 +16,5 @@ RUN apt-get update && \
     && apt-get autoremove && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ENV INITSYSTEM on
-
-
-COPY src/* ./
-COPY start.sh ./
 
 CMD ["bash", "start.sh"]
