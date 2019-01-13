@@ -1,9 +1,9 @@
+import os
+import time
+import schedule
 import multiprocessing
-from time import time
 from sendmail import sendmail
 from generatelights import showimage, ingestvideo, showvideo
-import os
-import schedule
 
 def getcredentials(file):
     with open(file, 'r') as file:
