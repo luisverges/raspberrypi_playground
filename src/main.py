@@ -19,33 +19,33 @@ output_file=os.path.join('output','mail_status.txt')
 with open('day.txt', 'r') as file:
     lines = file.readlines()
     day = lines[0][:-1]
-day='Day 7'
+day='Day 7' ############
 html_file=open(os.path.join('mails',day+'.html'), 'r', encoding='utf-8')
 html=html_file.read()
 html_file.close()
 
 if day=='Day 0' or day=='Termination':
-    credentials= getcredentials(os.path.join('credentials','deepsound.txt'))
+    credentials = getcredentials(os.path.join('credentials','deepsound.txt'))
     sendmail(html, credentials, to_list, 'Deepsound News', output_file)
     
 elif day=='Day 7':
-    """
+    """ #################
     credentials= getcredentials(os.path.join('credentials','diana.txt'))
     sendmail(html, credentials, to_list, 'Diana\'s SOTD', output_file)
-    """
-    music_path='\''+os.path.join(os.getcwd(),'music', 'Brian Eno The Big Ship.mp3')+'\''
+    """ #################
+    music_path = os.path.join(os.getcwd(),'music', 'Brian Eno The Big Ship.mp3')
     video = ingestvideo(os.path.join('animation','Frames'))
     
     if __name__ == '__main__':
             
-        sound = multiprocessing.Process(name='sound', target=os.system, args=('play {0}'.format(music_path),))
+        sound = multiprocessing.Process(name='sound', target=os.system, args=('play \'{0}\''.format(music_path),))
         images = multiprocessing.Process(name='images', target=showvideo, args=(video,))
 
         sound.start()
         images.start()
 
 else:
-    credentials= getcredentials(os.path.join('credentials','diana.txt'))
+    credentials = getcredentials(os.path.join('credentials','diana.txt'))
     sendmail(html, credentials, to_list, 'Diana\'s SOTD', output_file)
     showimage(os.path.join('img',day+'.png'))
 
