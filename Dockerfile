@@ -109,8 +109,8 @@ RUN apt-get update && apt-get install -yq \
 #install requirements
 COPY requirements.txt ./
 RUN apt-get update && \
-    apt-get install -yq --no-install-recommends \
-      build-essential libssl-dev libffi-dev libyaml-dev libjpeg-dev zlib1g-dev python3-dev python3-pip python3-gi && \
+    apt-get install -yq \
+      build-essential libssl-dev libffi-dev libyaml-dev libjpeg zlib libtiff openjpeg libjpeg-dev zlib1g-dev python3-dev python3-pip python3-gi && \
     pip3 install -r requirements.txt && \
     apt-get remove \
       build-essential libssl-dev libffi-dev libyaml-dev python3-dev python3-pip \
