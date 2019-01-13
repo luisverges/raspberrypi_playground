@@ -2,8 +2,6 @@ import multiprocessing
 from sendmail import sendmail
 from generatelights import showimage, ingestvideo, showvideo
 import os
-from pygame import mixer
-
 
 def getcredentials(file):
     with open(file, 'r') as file:
@@ -35,14 +33,11 @@ elif day=='Day 7':
     sendmail(html, credentials, to_list, 'Diana\'s SOTD', output_file)
     
     music_path=os.path.join('music', 'Brian Eno The Big Ship.mp3')
-    mixer.init()
-    mixer.music.load(music_path)
-    mixer.music.play()
     video = ingestvideo(os.path.join('animation','Frames'))
 
     if __name__ == '__main__':
             
-        sound = multiprocessing.Process(name='sound', target=mixer.music.play)
+        sound = multiprocessing.Process(name='sound', target=os.system, args=('start mpg123 music_path',)
         images = multiprocessing.Process(name='images', target=showvideo, args=(video,))
 
         sound.start()
