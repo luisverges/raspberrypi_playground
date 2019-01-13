@@ -1,17 +1,16 @@
 import os
 import time
-import schedule
 import multiprocessing
 from sendmail import sendmail
 from generatelights import showimage, ingestvideo, showvideo
-def job2():
-    print('Hello World')
+
 def getcredentials(file):
     with open(file, 'r') as file:
         username = file.readline()[:-1]
         password=file.readline()
     return [username, password]
-def job():
+
+def Diana():
     if os.getcwd()[-3:]!='src':
         os.chdir(os.path.join(os.getcwd(),'src'))
 
@@ -57,10 +56,13 @@ def job():
         for pos, line in enumerate(lines):
             if pos != 0:
                 file.write(line)
-
-schedule.every(5).seconds.do(job2)
-#schedule.every(5).minutes.do(job)
-x=0
-while x<5:
-    schedule.run_pending()
-    x+=1
+                
+while True:
+    with open('day.txt', 'r') as file:
+        lines = file.readlines()
+    for elements in lines:
+        Diana()
+        time.sleep(10)
+        #time.sleep(86400)
+    break
+    
