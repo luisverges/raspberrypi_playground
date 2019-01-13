@@ -1,5 +1,5 @@
 from PIL import Image, ImageDraw
-#from sense_hat import SenseHat
+from sense_hat import SenseHat
 import random
 import os
 import time
@@ -89,11 +89,11 @@ def ingestvideo(folder):#'animation\\Frames'
     return video
 
 def showvideo(video): #Showing the video on the sensehat
-    #sense = SenseHat()
+    sense = SenseHat()
     for frame in video:
-        #sense.set_pixels(frame) #Showing a single frame on the sensehat
+        sense.set_pixels(frame) #Showing a single frame on the sensehat
         time.sleep(.142857)
-    #sense.clear() 
+    sense.clear() 
 
 
 
