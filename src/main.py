@@ -1,14 +1,16 @@
 import multiprocessing
 from sendmail import sendmail
 from generatelights import showimage, ingestvideo, showvideo
-from playsound import playsound
 import os
+from pygame import mixer
+
 
 def getcredentials(file):
     with open(file, 'r') as file:
         username = file.readline()[:-1]
         password=file.readline()
     return [username, password]
+
 if os.getcwd()[-3:]!='src':
     os.chdir(os.path.join(os.getcwd(),'src'))
 
@@ -23,24 +25,24 @@ with open('day.txt', 'r') as file:
 html_file=open(os.path.join('mails',day+'.html'), 'r', encoding='utf-8')
 html=html_file.read()
 html_file.close()
-###DEL
-day='Day 7'
+
 if day=='Day 0' or day=='Termination':
     credentials= getcredentials(os.path.join('credentials','deepsound.txt'))
     sendmail(html, credentials, to_list, 'Deepsound News', output_file)
     
 elif day=='Day 7':
-    """
     credentials= getcredentials(os.path.join('credentials','diana.txt'))
     sendmail(html, credentials, to_list, 'Diana\'s SOTD', output_file)
     
     music_path=os.path.join('music', 'Brian Eno The Big Ship.mp3')
-    """
+    mixer.init()
+    mixer.music.load(music_path)
+    mixer.music.play()
     video = ingestvideo(os.path.join('animation','Frames'))
-    music_path=os.path.join('music', 'Brian Eno The Big Ship.mp3')
+
     if __name__ == '__main__':
             
-        sound = multiprocessing.Process(name='sound', target=playsound, args=(music_path,))
+        sound = multiprocessing.Process(name='sound', target=mixer.music.play)
         images = multiprocessing.Process(name='images', target=showvideo, args=(video,))
 
         sound.start()
