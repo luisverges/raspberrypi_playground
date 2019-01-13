@@ -97,6 +97,3 @@ def showvideo(video): #Showing the video on the sensehat
 
 
 
-
-
-

@@ -12,7 +12,7 @@ def getcredentials(file):
 
 os.chdir(os.path.join(os.getcwd(),'src'))
 
-to_list=['luisverges@gmail.com','perseofliesagain@gmail.com'] ######LIST
+to_list=['luisverges@gmail.com','perseofliesagain@gmail.com']
 output_file=os.path.join('output','mail_status.txt')
 
 #Obtain current day

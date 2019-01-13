@@ -2,8 +2,7 @@
 
 # Enabled i2c devices
 modprobe i2c-dev
-pwd
-ls
+
 # Start app
 python3 src/main.py
 
