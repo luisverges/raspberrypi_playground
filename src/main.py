@@ -33,7 +33,7 @@ elif day=='Day 7':
     credentials= getcredentials(os.path.join('credentials','diana.txt'))
     sendmail(html, credentials, to_list, 'Diana\'s SOTD', output_file)
     """
-    music_path=os.path.join(os.getcwd(),'music', 'Brian Eno The Big Ship.mp3')
+    music_path='\''+os.path.join(os.getcwd(),'music', 'Brian Eno The Big Ship.mp3')+'\''
     video = ingestvideo(os.path.join('animation','Frames'))
     
     if __name__ == '__main__':
