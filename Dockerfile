@@ -1,7 +1,7 @@
 FROM balenalib/raspberrypi3-debian:jessie
 
 RUN apt-get update && apt-get install -yq \
-   python sense-hat raspberrypi-bootloader python3-pygame && \
+   python sense-hat raspberrypi-bootloader python3-pygame libraspberrypi0 libraspberrypi-dev libraspberrypi-doc libraspberrypi-bin && \
    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app
