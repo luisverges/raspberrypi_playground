@@ -30,13 +30,13 @@ if day=='Day 0' or day=='Termination':
     sendmail(html, credentials, to_list, 'Deepsound News', output_file)
     
 elif day=='Day 7':
-    ###DEL
-    showvideo(ingestvideo(os.path.join('animation','Frames')))
     """
     credentials= getcredentials(os.path.join('credentials','diana.txt'))
     sendmail(html, credentials, to_list, 'Diana\'s SOTD', output_file)
-    video = ingestvideo(os.path.join('animation','Frames'))
+    
     music_path=os.path.join('music', 'Brian Eno The Big Ship.mp3')
+    """
+    video = ingestvideo(os.path.join('animation','Frames'))
     if __name__ == '__main__':
             
         sound = multiprocessing.Process(name='sound', target=playsound, args=(music_path,))
@@ -44,7 +44,7 @@ elif day=='Day 7':
 
         sound.start()
         images.start()
-        """
+
 else:
     credentials= getcredentials(os.path.join('credentials','diana.txt'))
     sendmail(html, credentials, to_list, 'Diana\'s SOTD', output_file)

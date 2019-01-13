@@ -82,7 +82,7 @@ def showimage(path): #Showing an image on the sensehat
 
 def ingestvideo(folder):#'animation\\Frames'
 
-    images = list(os.walk(folder))[0][2]
+    images = sorted(list(os.walk(folder))[0][2])
     video = []
     for image in images:
         video.append(ingestimage(os.path.join(folder,image)))
