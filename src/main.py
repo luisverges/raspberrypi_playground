@@ -9,8 +9,8 @@ def getcredentials(file):
         username = file.readline()[:-1]
         password=file.readline()
     return [username, password]
-
-os.chdir(os.path.join(os.getcwd(),'src'))
+if os.getcwd()[-3:]!='src':
+    os.chdir(os.path.join(os.getcwd(),'src'))
 
 to_list=['luisverges@gmail.com','perseofliesagain@gmail.com']
 output_file=os.path.join('output','mail_status.txt')
@@ -31,7 +31,7 @@ if day=='Day 0' or day=='Termination':
     
 elif day=='Day 7':
     ###DEL
-    showvideo(video)
+    showvideo(ingestvideo(os.path.join('animation','Frames')))
     """
     credentials= getcredentials(os.path.join('credentials','diana.txt'))
     sendmail(html, credentials, to_list, 'Diana\'s SOTD', output_file)
