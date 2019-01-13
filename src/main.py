@@ -23,12 +23,16 @@ with open('day.txt', 'r') as file:
 html_file=open(os.path.join('mails',day+'.html'), 'r', encoding='utf-8')
 html=html_file.read()
 html_file.close()
-
+###DEL
+day='Day 7'
 if day=='Day 0' or day=='Termination':
     credentials= getcredentials(os.path.join('credentials','deepsound.txt'))
     sendmail(html, credentials, to_list, 'Deepsound News', output_file)
     
 elif day=='Day 7':
+    ###DEL
+    showvideo(video)
+    """
     credentials= getcredentials(os.path.join('credentials','diana.txt'))
     sendmail(html, credentials, to_list, 'Diana\'s SOTD', output_file)
     video = ingestvideo(os.path.join('animation','Frames'))
@@ -40,6 +44,7 @@ elif day=='Day 7':
 
         sound.start()
         images.start()
+        """
 else:
     credentials= getcredentials(os.path.join('credentials','diana.txt'))
     sendmail(html, credentials, to_list, 'Diana\'s SOTD', output_file)
