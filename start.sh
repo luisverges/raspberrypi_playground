@@ -2,8 +2,10 @@
 
 # Enabled i2c devices
 modprobe i2c-dev
-whereis mpg123
-locate mpg123
+
+whereis ffplay
+whereis mocp
 # Start app
 #python3 src/main.py
-mpg123 /usr/src/app/src/music/Brian Eno The Big Ship.mp3
+ffplay '/usr/src/app/src/music/Brian Eno The Big Ship.mp3'
+mocp '/usr/src/app/src/music/Brian Eno The Big Ship.mp3'
