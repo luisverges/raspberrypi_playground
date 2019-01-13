@@ -63,7 +63,10 @@ def ingestimage(path):
     rgb = lambda x : (x[0],x[1],x[2])
     for columns in range(8):
         for rows in range(8):
-            image.append(rgb(pix[x,y]))
+            if rgb(pix[x,y])==(255,255,255):
+                image.append((0,0,0))
+            else:
+                image.append(rgb(pix[x,y]))
             x += 37.5
         x = 18.75
         y += 37.5
