@@ -60,5 +60,7 @@ def job():
 
 schedule.every(5).seconds.do(job2)
 #schedule.every(5).minutes.do(job)
-while True:
+x=0
+while x<5:
     schedule.run_pending()
+    x+=1
