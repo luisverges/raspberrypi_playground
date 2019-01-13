@@ -1,7 +1,7 @@
 FROM balenalib/raspberrypi3-debian:jessie
 
 RUN apt-get update && apt-get install -yq \
-   python sense-hat raspberrypi-bootloader moc && \
+   python sense-hat raspberrypi-bootloader sox libsox-fmt-all && \
    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app
