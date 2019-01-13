@@ -58,7 +58,7 @@ def job():
             if pos != 0:
                 file.write(line)
 
-schedule.every(5).minutes.do(job2)
-
+schedule.every(5).seconds.do(job2)
+#schedule.every(5).minutes.do(job)
 while True:
     schedule.run_pending()
