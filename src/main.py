@@ -38,7 +38,7 @@ elif day=='Day 7':
     
     if __name__ == '__main__':
             
-        sound = multiprocessing.Process(name='sound', target=os.system, args=('start play music_path',))
+        sound = multiprocessing.Process(name='sound', target=os.system, args=('play music_path',))
         images = multiprocessing.Process(name='images', target=showvideo, args=(video,))
 
         sound.start()
