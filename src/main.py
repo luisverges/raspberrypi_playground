@@ -1,4 +1,5 @@
 import multiprocessing
+from time import time
 from sendmail import sendmail
 from generatelights import showimage, ingestvideo, showvideo
 import os
