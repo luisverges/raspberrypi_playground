@@ -20,4 +20,4 @@ COPY start.sh ./
 
 ENV INITSYSTEM on
 
-CMD ["bash", "start.sh"]
+#CMD ["bash", "start.sh"]
