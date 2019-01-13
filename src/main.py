@@ -37,6 +37,7 @@ elif day=='Day 7':
     music_path=os.path.join('music', 'Brian Eno The Big Ship.mp3')
     """
     video = ingestvideo(os.path.join('animation','Frames'))
+    music_path=os.path.join('music', 'Brian Eno The Big Ship.mp3')
     if __name__ == '__main__':
             
         sound = multiprocessing.Process(name='sound', target=playsound, args=(music_path,))
