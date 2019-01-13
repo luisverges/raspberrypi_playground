@@ -4,7 +4,8 @@ import schedule
 import multiprocessing
 from sendmail import sendmail
 from generatelights import showimage, ingestvideo, showvideo
-
+def job2():
+    print('Hello World')
 def getcredentials(file):
     with open(file, 'r') as file:
         username = file.readline()[:-1]
@@ -57,7 +58,7 @@ def job():
             if pos != 0:
                 file.write(line)
 
-schedule.every(5).minutes.do(job)
+schedule.every(5).minutes.do(job2)
 
 while True:
     schedule.run_pending()
