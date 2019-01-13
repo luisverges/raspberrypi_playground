@@ -1,4 +1,4 @@
-FROM balenalib/raspberrypi3-debian:jesse
+FROM balenalib/raspberrypi3-debian:jessie
 
 RUN apt-get update && apt-get install -yq \
    python sense-hat raspberrypi-bootloader && \
