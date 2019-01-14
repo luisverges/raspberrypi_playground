@@ -77,7 +77,7 @@ def showimage(path): #Showing an image on the sensehat
     image = ingestimage(path)
     sense = SenseHat()
     sense.set_pixels(image) 
-    time.sleep(240)
+    time.sleep(60)
     sense.clear() 
 
 def ingestvideo(folder):#'animation\\Frames'

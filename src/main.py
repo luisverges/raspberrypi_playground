@@ -11,6 +11,7 @@ def getcredentials(file):
     return [username, password]
 
 def Diana(): #main program
+    start = time.perf_counter()
     
     to_list=['luisverges@gmail.com','perseofliesagain@gmail.com']
     output_file=os.path.join('output','mail_status.txt')
@@ -54,17 +55,21 @@ def Diana(): #main program
         for pos, line in enumerate(lines):
             if pos != 0:
                 file.write(line)
+    end = time.perf_counter()
+    execution_time= end-start
+    return execution_time
 
 
-#Program execution                
+#Program execution
+
 if os.getcwd()[-3:]!='src':
     os.chdir(os.path.join(os.getcwd(),'src'))                
 while True:
     with open('day.txt', 'r') as file:
         lines = file.readlines()
     for elements in lines:
-        Diana()
-        time.sleep(10)
-        #time.sleep(86400) #Every day
+        execution_time = Diana()
+        time.sleep(120-execution_time)
+        #time.sleep(86400) #Every day at the same hour
     break
     
