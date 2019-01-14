@@ -1,10 +1,14 @@
-import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
 import time
+import smtplib
+from os.path import basename
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.mime.application import MIMEApplication
 
 
-def sendmail(html_text,credentials,to_list,subject,output_file=None):
+
+
+def sendmail(html_text,credentials,to_list,subject,output_file=None, files=None):
     wait_time = 15
     host = "smtp.gmail.com"
     port = 587
@@ -23,9 +27,18 @@ def sendmail(html_text,credentials,to_list,subject,output_file=None):
             the_msg['Subject'] = subject
             the_msg['To'] = ', '.join(to_list)
 
-            part_2 = MIMEText(html_text, 'html')
-            the_msg.attach(part_2)
+            html = MIMEText(html_text, 'html')
+            the_msg.attach(html)
 
+            if files!=None:
+                for f in files:
+                    print(f)
+                    with open(f, "rb") as fil:
+                        part = MIMEApplication(fil.read(),Name=basename(f))
+
+                part['Content-Disposition'] = 'attachment; filename="%s"' % basename(f)
+                the_msg.attach(part)
+            
             email_conn.sendmail(from_email,to_list,the_msg.as_string())
 
             if output_file!=None:

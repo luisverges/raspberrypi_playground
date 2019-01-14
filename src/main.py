@@ -27,12 +27,12 @@ def Diana(): #main program
 
     if day=='Day 0' or day=='Termination':
         credentials = getcredentials(os.path.join('credentials','deepsound.txt'))
-        sendmail(html, credentials, to_list, 'Deepsound News', output_file)
+        sendmail(html, credentials, to_list, 'Deepsound News', output_file=output_file)
         
     elif day=='Day 7':
         
         credentials= getcredentials(os.path.join('credentials','diana.txt'))
-        sendmail(html, credentials, to_list, 'Diana\'s SOTD', output_file)
+        sendmail(html, credentials, to_list, 'Diana\'s SOTD', output_file=output_file, files=[os.path.join('video','Diana.avi')])
         
         music_path = os.path.join(os.getcwd(),'music', 'Brian Eno The Big Ship.mp3')
         video = ingestvideo(os.path.join('animation','Frames'))
@@ -47,7 +47,7 @@ def Diana(): #main program
 
     else:
         credentials = getcredentials(os.path.join('credentials','diana.txt'))
-        sendmail(html, credentials, to_list, 'Diana\'s SOTD', output_file)
+        sendmail(html, credentials, to_list, 'Diana\'s SOTD', output_file=output_file)
         showimage(os.path.join('img',day+'.png'))
 
     #Delete day from the file, so next time the program is executed, next day gets read
