@@ -69,7 +69,7 @@ while True:
         lines = file.readlines()
     for elements in lines:
         execution_time = Diana()
-        time.sleep(210-execution_time)
+        time.sleep(1800-execution_time)
         #time.sleep(86400) #Every day at the same hour
     break
     
