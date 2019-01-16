@@ -70,7 +70,7 @@ while True:
     for days in lines:
         execution_time = Diana()
         if days[:-1]=="Day 6\n":
-            upload_time=120
+            upload_time=140
         else: upload_time=0
         time.sleep(300-execution_time-upload_time)
         #time.sleep(86400-execution_time-upload_time) #Every day at the same hour
