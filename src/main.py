@@ -67,9 +67,14 @@ if os.getcwd()[-3:]!='src':
 while True:
     with open('day.txt', 'r') as file:
         lines = file.readlines()
-    for elements in lines:
+    for days in lines:
         execution_time = Diana()
-        time.sleep(180-execution_time)
-        #time.sleep(86400-execution_time) #Every day at the same hour
+        if days=="Day 6":
+            upload_time=120
+        else: upload_time=0
+        time.sleep(300-execution_time-upload_time)
+        #time.sleep(86400-execution_time-upload_time) #Every day at the same hour
     break
+#####################
+time.sleep(400)
     
