@@ -70,6 +70,6 @@ while True:
     for elements in lines:
         execution_time = Diana()
         time.sleep(180-execution_time)
-        #time.sleep(86400) #Every day at the same hour
+        #time.sleep(86400-execution_time) #Every day at the same hour
     break
     

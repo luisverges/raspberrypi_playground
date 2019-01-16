@@ -45,13 +45,13 @@ def sendmail(html_text,credentials,to_list,subject,output_file=None, files=None)
             if output_file!=None:
                 now=datetime.datetime.now()
                 with open(output_file, 'a') as file:
-                    file.write('Email sent succesfully at'+'{0} {1}, at {2}:{3}:{4}'.format(now.strftime("%A"), now.day, now.hour, now.minute, now.second)+'!\n')
+                    file.write('Email sent succesfully on '+'{0} {1}, at {2:02}:{3:02}:{4:02}'.format(now.strftime("%A"), now.day, now.hour, now.minute, now.second)+'!\n')
                 return
         except Exception as inst:
             if output_file!=None:
                 now=datetime.datetime.now()
                 with open(output_file, 'a') as file:
-                    file.write('Failed attempt on '+'{0} {1}, at {2}:{3}:{4}'.format(now.strftime("%A"), now.day, now.hour, now.minute, now.second)+': '+str(inst)+'\n')
+                    file.write('Failed attempt on '+'{0} {1}, at {2:02}:{3:02}:{4:02}'.format(now.strftime("%A"), now.day, now.hour, now.minute, now.second)+': '+str(inst)+'\n')
                 time.sleep(wait_time)
                 wait_time+=15
 
