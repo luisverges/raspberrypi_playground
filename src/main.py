@@ -29,10 +29,10 @@ def Diana(): #main program
         credentials = getcredentials(os.path.join('credentials','deepsound.txt'))
         sendmail(html, credentials, to_list, 'Deepsound News', output_file=output_file)
         
-    elif day=='Day 7':
+    elif day=='Sunday':
         
         credentials= getcredentials(os.path.join('credentials','diana.txt'))
-        sendmail(html, credentials, to_list, 'Diana\'s SOTD', output_file=output_file, files=[os.path.join('video','Diana.avi')])
+        sendmail(html, credentials, to_list, day+': Diana\'s Song of the day', output_file=output_file, files=[os.path.join('video','Diana.avi')])
         
         music_path = os.path.join(os.getcwd(),'music', 'Brian Eno The Big Ship.mp3')
         video = ingestvideo(os.path.join('animation','Frames'))
@@ -47,7 +47,7 @@ def Diana(): #main program
 
     else:
         credentials = getcredentials(os.path.join('credentials','diana.txt'))
-        sendmail(html, credentials, to_list, 'Diana\'s SOTD', output_file=output_file)
+        sendmail(html, credentials, to_list, day+': Diana\'s Song of the day', output_file=output_file)
         showimage(os.path.join('img',day+'.png'))
 
     #Delete day from the file, so next time the program is executed, next day gets read
@@ -69,11 +69,11 @@ while True:
         lines = file.readlines()
     for days in lines:
         execution_time = Diana()
-        if days[:-1]=="Day 6":
-            upload_time=140
+        if days[:-1]=="Saturday":
+            upload_time=145
         else: upload_time=0
         time.sleep(300-execution_time-upload_time)
-        #time.sleep(86400-execution_time-upload_time) #Every day at the same hour
+        #time.sleep(86400-execution_time-upload_time) #Every day at around the same hour
     break
 #####################
 time.sleep(400)
