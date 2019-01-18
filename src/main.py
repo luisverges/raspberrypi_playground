@@ -11,7 +11,6 @@ def getcredentials(file):
     return [username, password]
 
 def Diana(): #main program
-    start = time.perf_counter()
     
     to_list=['luisverges@gmail.com','perseofliesagain@gmail.com']
     output_file=os.path.join('output','mail_status.txt')
@@ -28,12 +27,13 @@ def Diana(): #main program
     if day=='Day 0' or day=='Termination':
         credentials = getcredentials(os.path.join('credentials','deepsound.txt'))
         sendmail(html, credentials, to_list, 'Deepsound News', output_file=output_file)
+        start = time.perf_counter()
         
     elif day=='Sunday':
         
         credentials= getcredentials(os.path.join('credentials','diana.txt'))
         sendmail(html, credentials, to_list, day+': Diana\'s Song of the day', output_file=output_file, files=[os.path.join('video','Diana.avi')])
-        
+        start = time.perf_counter()
         music_path = os.path.join(os.getcwd(),'music', 'Brian Eno The Big Ship.mp3')
         video = ingestvideo(os.path.join('animation','Frames'))
         
@@ -48,6 +48,7 @@ def Diana(): #main program
     else:
         credentials = getcredentials(os.path.join('credentials','diana.txt'))
         sendmail(html, credentials, to_list, day+': Diana\'s Song of the day', output_file=output_file)
+        start = time.perf_counter()
         showimage(os.path.join('img',day+'.png'))
 
     #Delete day from the file, so next time the program is executed, next day gets read
