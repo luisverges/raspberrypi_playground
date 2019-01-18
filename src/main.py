@@ -69,7 +69,7 @@ while True:
         lines = file.readlines()
     for days in lines:
         execution_time = Diana()
-        if days[:-1]=="Day 6\n":
+        if days[:-1]=="Day 6":
             upload_time=140
         else: upload_time=0
         time.sleep(300-execution_time-upload_time)
