@@ -70,7 +70,8 @@ while True:
         if days[:-1]=="Saturday":
             upload_time=145
         elif days[:-1]=="Sunday":
-        else: upload_time=-145
+            upload_time=-145
+        else: upload_time=0
         time.sleep(300-execution_time-upload_time)
         #time.sleep(86400-execution_time-upload_time) #Every day at around the same hour
     break
